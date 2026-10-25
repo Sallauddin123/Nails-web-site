@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Project N: press-on nails for every Indian moment. Handmade in Bangalore.">
+<meta name="theme-color" content="#FF2E7E">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>Project N</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Outfit:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: sticker-pop beauty zine — thick ink outlines, offset shadows, colour-blocked bands, big chunky type; one committed light look */
+:root{
+  --paper:#FFF7F2; --ink:#16101A; --pink:#FF2E7E; --pink-soft:#FFD3E5; --sun:#FFE14D; --mint:#8EF0C8; --lilac:#C8B6FF; --orange:#FF7A3D;
+  --ink-dim:#4D4352;
+  --display:'Bagel Fat One','Arial Black',system-ui,sans-serif; --body:'Outfit',system-ui,-apple-system,sans-serif; --mono:'Space Mono',ui-monospace,monospace;
+  --b:3px solid var(--ink); --sh:6px 6px 0 var(--ink); color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1220px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.disp{font-family:var(--display);font-weight:400;letter-spacing:-.01em;line-height:.95}
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:6px 12px;border-radius:999px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;font-family:var(--body);font-weight:800;font-size:17px;text-decoration:none;border:var(--b);box-shadow:var(--sh);cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;color:var(--ink)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+.btn-pink{background:var(--pink);color:#fff}
+.btn-sun{background:var(--sun)}
+.btn-white{background:#fff}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--paper);border-bottom:var(--b)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:12px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-size:30px;text-decoration:none;display:flex;align-items:center;gap:8px;line-height:1}
+.logo span{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--pink);color:#fff;border:var(--b);font-size:22px}
+nav.main{display:flex;gap:6px;flex-wrap:wrap}
+nav.main a{text-decoration:none;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px}
+nav.main a:hover{background:var(--sun)}
+.bag{min-height:46px;padding:0 18px;border-radius:999px;border:var(--b);background:var(--sun);font-weight:800;font-family:var(--body);font-size:16px;cursor:pointer;display:flex;align-items:center;gap:8px;color:var(--ink)}
+.bag b{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:13px;background:var(--ink);color:var(--paper);font-size:13px;font-variant-numeric:tabular-nums}
+.bag.bump{animation:bump .5s ease}
+@keyframes bump{30%{transform:scale(1.15) rotate(-4deg)}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:var(--b);background:var(--pink-soft)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:28px;align-items:center;padding-block:56px 64px}
+.hero h1{font-family:var(--display);font-size:clamp(54px,9vw,138px);line-height:.88;letter-spacing:-.02em}
+.hero h1 .rot{display:inline-block;color:var(--pink);-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;white-space:nowrap}
+.hero .lede{font-size:clamp(18px,1.8vw,22px);font-weight:500;max-width:34ch;margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.fan{position:relative;aspect-ratio:1/1.1;min-height:360px}
+.fan figure{position:absolute;margin:0;width:56%;aspect-ratio:3/4;border:var(--b);border-radius:24px;overflow:hidden;box-shadow:var(--sh);background:#fff;transition:transform .5s cubic-bezier(.2,.9,.2,1.2)}
+.fan figure img{width:100%;height:100%;object-fit:cover}
+.fan .f1{left:0;top:10%;transform:rotate(-9deg)}
+.fan .f2{left:22%;top:0;transform:rotate(4deg);z-index:2}
+.fan .f3{right:0;top:22%;transform:rotate(11deg)}
+.fan:hover .f1{transform:rotate(-14deg) translate(-12px,8px)}
+.fan:hover .f3{transform:rotate(16deg) translate(12px,8px)}
+.sticker{position:absolute;z-index:5;font-family:var(--display);font-size:22px;line-height:1;padding:12px 16px;border:var(--b);border-radius:999px;box-shadow:4px 4px 0 var(--ink);cursor:grab;user-select:none;touch-action:none;white-space:nowrap}
+.sticker:active{cursor:grabbing}
+.sticker.round{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;text-align:center;font-size:20px;padding:0}
+.drag-hint{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:14px;font-family:var(--mono);font-size:12.5px;font-weight:700}
+
+/* tickers */
+.ticker{overflow:hidden;border-bottom:var(--b);background:var(--ink);color:var(--paper)}
+.ticker.sun{background:var(--sun);color:var(--ink);transform:rotate(-1.2deg);margin:-6px -20px 0;border-top:var(--b)}
+.ticker .track{display:flex;gap:36px;width:max-content;padding-block:16px;animation:mq 30s linear infinite;font-family:var(--display);font-size:clamp(24px,3vw,36px)}
+.ticker.sun .track{animation-direction:reverse;animation-duration:36s}
+.ticker .track span{display:flex;align-items:center;gap:36px;white-space:nowrap}
+.ticker .track span::after{content:"✦";color:var(--pink)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* sections */
+.band{padding-block:clamp(72px,9vw,120px);border-bottom:var(--b)}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:40px}
+.head h2{font-family:var(--display);font-size:clamp(44px,6.4vw,92px);line-height:.92;max-width:12ch;margin-top:14px}
+.head p{max-width:40ch;font-size:18px;color:var(--ink-dim);font-weight:500}
+
+/* swipe */
+.swipe{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.deck{position:relative;width:min(380px,100%);aspect-ratio:3/4;margin:0 auto}
+.card{position:absolute;inset:0;border:var(--b);border-radius:28px;overflow:hidden;background:#fff;box-shadow:var(--sh);touch-action:none;cursor:grab;will-change:transform}
+.card img{width:100%;height:78%;object-fit:cover;pointer-events:none;border-bottom:var(--b)}
+.card .cap{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px;height:22%}
+.card .cap strong{font-family:var(--display);font-size:24px;line-height:1}
+.card .cap span{font-family:var(--mono);font-weight:700;font-size:14px}
+.card .stamp{position:absolute;top:22px;padding:6px 14px;border:4px solid;border-radius:12px;font-family:var(--display);font-size:30px;opacity:0;transform:rotate(-12deg)}
+.card .yes{left:20px;color:var(--pink);border-color:var(--pink);background:#fff}
+.card .no{right:20px;color:var(--ink);border-color:var(--ink);background:#fff;transform:rotate(12deg)}
+.deck-btns{display:flex;justify-content:center;gap:18px;margin-top:28px}
+.round-btn{width:70px;height:70px;border-radius:50%;border:var(--b);box-shadow:var(--sh);display:grid;place-items:center;cursor:pointer;transition:transform .15s}
+.round-btn:hover{transform:translate(-2px,-2px)}
+.round-btn svg{width:30px;height:30px}
+.likes{display:flex;flex-direction:column;gap:16px}
+.likes .list{display:flex;flex-wrap:wrap;gap:10px;min-height:52px}
+.likes .chip{display:flex;align-items:center;gap:8px;border:var(--b);border-radius:999px;padding:6px 14px 6px 6px;background:#fff;font-weight:700}
+.likes .chip img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--ink)}
+.empty{font-family:var(--mono);font-size:14px;color:var(--ink-dim)}
+
+/* collections */
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.tile{position:relative;border:var(--b);border-radius:28px;overflow:hidden;box-shadow:var(--sh);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.tile:hover{transform:translate(-3px,-3px) rotate(-.6deg);box-shadow:10px 10px 0 var(--ink)}
+.tile figure{margin:0;aspect-ratio:4/3;overflow:hidden;border-bottom:var(--b)}
+.tile figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tile:hover figure img{transform:scale(1.08)}
+.tile .txt{padding:20px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tile h3{font-family:var(--display);font-size:32px;line-height:1}
+.tile p{color:var(--ink-dim);font-weight:500}
+.tile .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;font-family:var(--mono);font-weight:700;font-size:14px}
+.tile .badge{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:12.5px;font-weight:700;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:4px 10px}
+
+/* wheel */
+.vibe{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.wheel-box{position:relative;width:min(460px,100%);aspect-ratio:1;margin:0 auto}
+.wheel{position:absolute;inset:0;border-radius:50%;border:4px solid var(--ink);box-shadow:var(--sh);background:conic-gradient(var(--pink) 0 60deg,var(--sun) 60deg 120deg,var(--mint) 120deg 180deg,var(--lilac) 180deg 240deg,var(--orange) 240deg 300deg,#fff 300deg 360deg);transition:transform 3.6s cubic-bezier(.12,.75,.12,1)}
+.wheel .lbl{position:absolute;left:50%;top:50%;width:46%;transform-origin:0 50%;font-family:var(--display);font-size:clamp(15px,2vw,21px);padding-left:22%;white-space:nowrap}
+.pin{position:absolute;left:50%;top:-18px;transform:translateX(-50%);width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-top:38px solid var(--ink);z-index:3}
+.hub{position:absolute;left:50%;top:50%;width:26%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--ink);color:var(--paper);border:4px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-size:clamp(18px,2.2vw,26px);cursor:pointer;z-index:3}
+.result{border:var(--b);border-radius:28px;box-shadow:var(--sh);overflow:hidden;background:#fff;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.result img{width:100%;height:100%;object-fit:cover;border-right:var(--b);min-height:260px}
+.result .r{padding:22px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.result .r strong{font-family:var(--display);font-size:34px;line-height:1}
+.result .r p{color:var(--ink-dim);font-weight:500}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;list-style:none;padding:0;margin:0}
+.steps li{border:var(--b);border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--sh)}
+.steps .n{font-family:var(--display);font-size:64px;line-height:1}
+.steps h3{font-family:var(--display);font-size:30px;line-height:1}
+.steps p{font-weight:500;color:var(--ink-dim)}
+
+/* tools */
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.tool{border:var(--b);border-radius:28px;box-shadow:var(--sh);background:#fff;padding:28px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.tool h3{font-family:var(--display);font-size:36px;line-height:1}
+.tool .sub{font-weight:500;color:var(--ink-dim)}
+input[type=range]{width:100%;accent-color:var(--pink);height:44px}
+.sizeout{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.sizeout .big{font-family:var(--display);font-size:96px;line-height:1;color:var(--pink);-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;min-width:1.4ch}
+.hn{display:flex;align-items:flex-end;gap:8px}
+.hn i{display:block;background:var(--pink);border:2.5px solid var(--ink);border-radius:50% 50% 42% 42%/64% 64% 36% 36%;transition:all .35s cubic-bezier(.2,.9,.2,1.3)}
+.compare{position:relative;border:var(--b);border-radius:22px;overflow:hidden;aspect-ratio:16/11;user-select:none;touch-action:pan-y}
+.compare .side{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;gap:6px}
+.compare .salon{background:var(--img-salon) center/cover}
+.compare .ours{background:var(--img-ours) center/cover;clip-path:inset(0 0 0 var(--pos,50%));align-items:flex-end;text-align:right}
+.compare .lab{background:#fff;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;display:flex;flex-direction:column}
+.compare .lab b{font-family:var(--display);font-size:clamp(20px,2.4vw,28px);font-weight:400;line-height:1.05}
+.compare .lab small{font-family:var(--mono);font-size:12px;font-weight:700}
+.compare .ours .lab{background:var(--sun)}
+.compare .handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:4px;background:var(--ink);transform:translateX(-2px)}
+.compare .handle span{position:absolute;top:50%;left:50%;width:52px;height:52px;border-radius:50%;background:var(--pink);border:var(--b);color:#fff;transform:translate(-50%,-50%);display:grid;place-items:center;font-weight:800;font-size:20px}
+.compare input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.fine{font-family:var(--mono);font-size:12px;color:var(--ink-dim)}
+
+/* bridal */
+.bridal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.bridal .pics{position:relative;aspect-ratio:1/1}
+.bridal .pics figure{position:absolute;margin:0;border:var(--b);border-radius:26px;overflow:hidden;box-shadow:var(--sh)}
+.bridal .pics img{width:100%;height:100%;object-fit:cover}
+.bridal .p1{left:0;top:0;width:64%;height:82%;transform:rotate(-4deg)}
+.bridal .p2{right:0;bottom:0;width:52%;height:58%;transform:rotate(5deg)}
+.bridal h2{font-family:var(--display);font-size:clamp(44px,6vw,84px);line-height:.92;margin-top:14px}
+.bridal ul{list-style:none;padding:0;margin:22px 0 28px;display:flex;flex-direction:column;gap:12px;font-size:18px;font-weight:500}
+.bridal li{display:flex;gap:12px;align-items:center}
+.bridal li::before{content:"";flex:none;width:14px;height:20px;border:2.5px solid var(--ink);border-radius:50% 50% 42% 42%/64% 64% 36% 36%;background:var(--pink)}
+
+/* drop */
+.drop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.p{border:var(--b);border-radius:24px;box-shadow:var(--sh);background:#fff;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.p figure{margin:0;aspect-ratio:1/1;overflow:hidden;border-bottom:var(--b);position:relative}
+.p figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.p:hover figure img{transform:scale(1.08) rotate(1deg)}
+.p .new{position:absolute;top:10px;left:10px;font-family:var(--display);font-size:16px;background:var(--sun);border:2.5px solid var(--ink);border-radius:999px;padding:4px 12px}
+.p .b{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.p .b .t{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.p h3{font-family:var(--display);font-size:22px;line-height:1.05}
+.p .b .t span{font-family:var(--mono);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.p .b p{color:var(--ink-dim);font-size:15px;font-weight:500}
+.p button{margin-top:auto;min-height:46px;border-radius:999px;border:2.5px solid var(--ink);background:var(--pink-soft);font-family:var(--body);font-weight:800;font-size:15px;cursor:pointer;color:var(--ink)}
+.p button:hover{background:var(--pink);color:#fff}
+.count{font-family:var(--mono);font-weight:700;background:var(--ink);color:var(--sun);padding:8px 14px;border-radius:999px;font-variant-numeric:tabular-nums;display:inline-block;margin-top:10px}
+
+/* club */
+.club{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center}
+.club h2{font-family:var(--display);font-size:clamp(44px,6vw,84px);line-height:.92;margin-top:14px}
+.club .card2{background:#fff;border:var(--b);border-radius:28px;box-shadow:var(--sh);padding:28px;display:flex;flex-direction:column;gap:16px;transform:rotate(1.5deg)}
+.club .card2 .pr{font-family:var(--display);font-size:52px;line-height:1}
+.club .card2 ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-weight:600}
+.club .card2 li::before{content:"✓ ";color:var(--pink);font-weight:800}
+
+/* community */
+.say{font-family:var(--display);font-size:clamp(52px,10vw,150px);line-height:.88;letter-spacing:-.02em}
+.say .w{display:inline-block;color:var(--sun);-webkit-text-stroke:3px var(--ink);paint-order:stroke fill}
+.langs{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 36px}
+.langs button{min-height:46px;padding:0 18px;border-radius:999px;border:var(--b);background:#fff;font-family:var(--body);font-weight:800;font-size:15px;cursor:pointer;color:var(--ink)}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.wall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:210px;gap:16px}
+.wall figure{margin:0;border:var(--b);border-radius:22px;overflow:hidden;position:relative;box-shadow:4px 4px 0 var(--ink)}
+.wall figure:nth-child(odd){transform:rotate(-1.2deg)}
+.wall figure:nth-child(even){transform:rotate(1.2deg)}
+.wall figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.wall figure:hover img{transform:scale(1.08)}
+.wall .t{grid-row:span 2}
+.wall figcaption{position:absolute;left:10px;bottom:10px;font-family:var(--mono);font-size:12px;font-weight:700;background:#fff;border:2px solid var(--ink);padding:4px 10px;border-radius:999px}
+.wa{display:flex;flex-direction:column;gap:10px;max-width:580px;margin-top:44px}
+.wa label{font-family:var(--display);font-size:28px;line-height:1}
+.wa .row{display:flex;flex-wrap:wrap;gap:12px}
+.wa input{flex:1 1 240px;min-width:0;min-height:54px;border-radius:999px;border:var(--b);padding:0 22px;font-family:var(--body);font-size:17px;background:#fff;color:var(--ink)}
+.wa .msg{font-weight:600;min-height:1.5em}
+
+/* paint */
+.paint{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center}
+.canvas-box{position:relative;border:var(--b);border-radius:30px;box-shadow:var(--sh);background:#fff;overflow:hidden;aspect-ratio:5/6;width:min(460px,100%);margin:0 auto}
+.canvas-box canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+.tools2{display:flex;flex-direction:column;gap:20px}
+.pal{display:flex;flex-wrap:wrap;gap:10px}
+.pal button{width:46px;height:46px;border-radius:50%;border:var(--b);cursor:pointer}
+.pal button[aria-pressed="true"]{box-shadow:0 0 0 4px var(--paper),0 0 0 7px var(--ink)}
+.modes{display:flex;flex-wrap:wrap;gap:10px}
+.modes button{min-height:46px;padding:0 16px;border-radius:999px;border:var(--b);background:#fff;font-family:var(--body);font-weight:800;font-size:15px;cursor:pointer;color:var(--ink)}
+.modes button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+/* jar */
+.jar{position:relative;border:var(--b);border-radius:36px 36px 48px 48px;box-shadow:var(--sh);background:rgba(255,255,255,.55);height:440px;overflow:hidden}
+.jar canvas{position:absolute;inset:0;width:100%;height:100%}
+.jar .lid{position:absolute;left:8%;right:8%;top:0;height:18px;background:var(--ink);border-radius:0 0 12px 12px}
+.jar-ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px}
+.jar-ctl .n{font-family:var(--mono);font-weight:700}
+/* fx */
+.trail{position:fixed;width:12px;height:18px;border:2px solid var(--ink);border-radius:50% 50% 42% 42%/64% 64% 36% 36%;pointer-events:none;z-index:90;animation:trail .8s ease-out forwards}
+@keyframes trail{to{transform:translate(var(--dx),-40px) rotate(var(--r)) scale(.3);opacity:0}}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:85}
+.dodge span{display:inline-block;transition:transform .25s cubic-bezier(.2,.9,.2,1.3);will-change:transform}
+body.disco main{animation:disco 2.4s linear infinite}
+@keyframes disco{to{filter:hue-rotate(360deg)}}
+.egg{font-family:var(--mono);font-size:12.5px;color:#CFC4D4}
+.egg button{background:none;border:2px solid #CFC4D4;color:#CFC4D4;border-radius:999px;padding:4px 12px;font-family:var(--mono);font-size:12.5px;cursor:pointer;margin-left:8px;min-height:32px}
+@media (max-width:960px){ .paint{grid-template-columns:minmax(0,1fr)} .jar{height:360px} }
+
+/* progress + badge */
+.progress{position:fixed;left:0;top:0;height:6px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--pink),var(--sun),var(--mint));z-index:70;pointer-events:none}
+.ring{position:absolute;left:max(16px,env(safe-area-inset-left,0px));bottom:-46px;width:150px;height:150px;z-index:6;pointer-events:none}
+.ring svg{width:100%;height:100%}
+.ring text{font-family:var(--mono);font-weight:700;font-size:13.5px;letter-spacing:2.6px;fill:var(--ink)}
+.ring .core{position:absolute;inset:38%;border-radius:50%;background:var(--pink);border:var(--b)}
+.sound{min-height:46px;padding:0 14px;border-radius:999px;border:var(--b);background:#fff;font-weight:800;font-family:var(--body);font-size:14px;cursor:pointer;color:var(--ink)}
+.sound[aria-pressed="true"]{background:var(--mint)}
+/* quiz */
+.quiz{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+.q{border:var(--b);border-radius:28px;box-shadow:var(--sh);background:#fff;padding:28px;display:flex;flex-direction:column;gap:18px}
+.q .step{font-family:var(--mono);font-weight:700;font-size:13px}
+.q h3{font-family:var(--display);font-size:clamp(28px,3.2vw,40px);line-height:1}
+.q .opts{display:flex;flex-direction:column;gap:12px}
+.q .opts button{min-height:56px;text-align:left;padding:12px 18px;border-radius:18px;border:var(--b);background:var(--paper);font-family:var(--body);font-weight:700;font-size:17px;cursor:pointer;color:var(--ink);transition:transform .15s,background .15s}
+.q .opts button:hover{background:var(--sun);transform:translateX(6px)}
+.qbar{height:12px;border:2.5px solid var(--ink);border-radius:999px;overflow:hidden;background:#fff}
+.qbar i{display:block;height:100%;width:0;background:var(--pink);transition:width .4s}
+.resultcard{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.resultcard img{border:var(--b);border-radius:24px;box-shadow:var(--sh);width:min(420px,100%)}
+/* game */
+.game{position:relative;border:var(--b);border-radius:30px;box-shadow:var(--sh);background:#fff;overflow:hidden;height:440px}
+.game canvas{width:100%;height:100%;display:block;touch-action:none}
+.game .hud{position:absolute;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-weight:700;font-size:15px;pointer-events:none}
+.game .over{position:absolute;inset:0;display:grid;place-items:center;background:rgba(255,247,242,.88);text-align:center;padding:20px}
+.game .over div{display:flex;flex-direction:column;gap:14px;align-items:center}
+.game .over strong{font-family:var(--display);font-size:clamp(34px,5vw,56px);line-height:1}
+/* instrument */
+.keys{display:flex;justify-content:center;align-items:flex-end;gap:clamp(6px,1.4vw,16px);flex-wrap:wrap;padding-block:20px}
+.keys button{width:clamp(44px,8vw,78px);height:clamp(70px,12vw,120px);border:var(--b);border-radius:50% 50% 42% 42%/64% 64% 36% 36%;box-shadow:4px 4px 0 var(--ink);cursor:pointer;font-family:var(--mono);font-weight:700;font-size:13px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px;color:var(--ink);transition:transform .08s}
+.keys button.hit{transform:translateY(8px) scale(.95);box-shadow:0 0 0 var(--ink)}
+@media (max-width:960px){ .quiz{grid-template-columns:minmax(0,1fr)} .game{height:380px} .ring{width:110px;height:110px;bottom:-34px} }
+
+footer{background:var(--ink);color:var(--paper)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;padding-block:52px 24px}
+footer nav{display:flex;flex-direction:column;gap:8px}
+footer nav strong{font-family:var(--display);font-weight:400;font-size:22px;color:var(--sun)}
+footer nav a{text-decoration:none;color:#E9E0EC}
+footer nav a:hover{color:var(--sun)}
+footer .cols{display:flex;gap:56px;flex-wrap:wrap}
+footer .huge{font-family:var(--display);font-size:clamp(64px,15vw,230px);line-height:.85;color:var(--pink);width:100%;letter-spacing:-.02em}
+footer .fine{color:#CFC4D4}
+
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,160%);background:var(--sun);color:var(--ink);border:var(--b);box-shadow:var(--sh);padding:14px 22px;border-radius:999px;font-weight:800;z-index:80;transition:transform .4s cubic-bezier(.2,.9,.2,1.2);max-width:calc(100vw - 32px)}
+.toast.show{transform:translate(-50%,0)}
+
+@media (max-width:960px){
+  .hero .wrap,.swipe,.vibe,.bridal,.club,.tools{grid-template-columns:minmax(0,1fr)}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .drop{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .wall{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px}
+  nav.main{display:none}
+  .fan{min-height:300px;max-width:520px;margin:0 auto;width:100%}
+}
+@media (max-width:560px){ .tiles,.drop{grid-template-columns:minmax(0,1fr)} .result{grid-template-columns:minmax(0,1fr)} .result img{border-right:0;border-bottom:var(--b)} .sticker{font-size:17px} .sticker.round{width:84px;height:84px;font-size:16px} }
+@media (prefers-reduced-motion:reduce){ .ticker .track{animation:none} *{transition:none!important} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top"><span aria-hidden="true">N</span>Project N</a>
+    <nav class="main" aria-label="Main">
+      <a href="#swipe">Swipe</a>
+      <a href="#paint">Paint</a>
+      <a href="#quiz">Vibe check</a>
+      <a href="#game">Arcade</a>
+      <a href="#music">Tap</a>
+      <a href="#bridal">Bridal</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="sound" id="soundBtn" type="button" aria-pressed="false">Sound off</button>
+      <button class="bag" id="bag" type="button">Bag <b id="bagCount">0</b></button>
+    </div>
+  </div>
+</header>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<main id="top">
+<section class="hero" id="hero" aria-label="Introduction">
+  <div class="wrap">
+    <div>
+      <span class="tag">Press-ons · made in Bangalore</span>
+      <h1 style="margin-top:20px" aria-label="Nails for every moment">Nails for every <span class="rot" id="rot">moment</span></h1>
+      <p class="lede">Salon nails in 5 minutes. No salon, no wait, no damage drama. Office Monday to your bestie's sangeet.</p>
+      <div class="ctas">
+        <a class="btn btn-pink" href="#swipe">Swipe to shop</a>
+        <a class="btn btn-white" href="#vibe">Spin the vibe</a>
+      </div>
+    </div>
+    <div class="fan" id="fan">
+      <figure class="f1"><img src="images/bride-red-mehendi.webp" alt="A bride in red with mehendi and bangles"></figure>
+      <figure class="f2"><img src="images/hero-marigold-nails.webp" alt="A hand with glossy almond nails among marigold flowers"></figure>
+      <figure class="f3"><img src="images/mini-heart-nails.webp" alt="White nails with tiny pink hearts"></figure>
+    </div>
+    <div class="sticker round" data-drag style="left:44%;top:12%;background:var(--sun);transform:rotate(-12deg)" aria-hidden="true">5 MIN<br>FLAT</div>
+    <div class="sticker" data-drag style="left:52%;bottom:16%;background:var(--mint);transform:rotate(6deg)" aria-hidden="true">no salon ✌</div>
+    <div class="sticker" data-drag style="right:4%;top:6%;background:#fff;transform:rotate(8deg)" aria-hidden="true">sakkath!</div>
+    <div class="sticker round" data-drag style="right:6%;bottom:8%;background:var(--lilac);transform:rotate(10deg)" aria-hidden="true">made in<br>BLR</div>
+  </div>
+  <p class="drag-hint" aria-hidden="true">psst, drag the stickers</p>
+  <div class="ring" aria-hidden="true"><svg viewBox="0 0 150 150"><defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><g id="ringText"><text><textPath href="#circ">NAILS FOR EVERY MOMENT ✦ HANDMADE IN BLR ✦ </textPath></text></g></svg><span class="core"></span></div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="track">
+  <span>office monday</span><span>haldi</span><span>date night</span><span>onam</span><span>sangeet</span><span>college fest</span><span>muhurtham</span><span>diwali</span>
+  <span>office monday</span><span>haldi</span><span>date night</span><span>onam</span><span>sangeet</span><span>college fest</span><span>muhurtham</span><span>diwali</span>
+</div></div>
+
+<section class="band" id="swipe" aria-labelledby="swipe-h" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">This week</span><h2 id="swipe-h">Swipe right on your next set.</h2></div><p>Drag a card right to save it, left to skip. Or use the buttons. Saved sets go straight into your bag.</p></div>
+    <div class="swipe">
+      <div>
+        <div class="deck" id="deck" aria-live="polite"></div>
+        <div class="deck-btns">
+          <button class="round-btn" id="nope" type="button" aria-label="Skip this set" style="background:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+          <button class="round-btn" id="yep" type="button" aria-label="Save this set" style="background:var(--pink);color:#fff"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.8 8.3 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.5.8-1.3 2.3-2.5 4.4-2.5 3.6 0 5.8 3.8 4.2 7.3C19.5 16.4 12 21 12 21Z"/></svg></button>
+        </div>
+      </div>
+      <div class="likes">
+        <h3 class="disp" style="font-size:40px">Your saved sets</h3>
+        <div class="list" id="likeList"><p class="empty" id="likeEmpty">Nothing saved yet. Swipe right on one you love.</p></div>
+        <div><button class="btn btn-sun" id="addLikes" type="button">Add saved sets to bag</button></div>
+        <button class="btn btn-white" id="resetDeck" type="button" style="align-self:flex-start">Shuffle the deck again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="paint" aria-labelledby="paint-h" style="background:var(--sun)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Nail art studio</span><h2 id="paint-h">Paint your own nail.</h2></div><p>Draw on the nail with your finger or mouse. Add glitter, slap on stickers, then send it to our artists to make for real.</p></div>
+    <div class="paint">
+      <div class="canvas-box"><canvas id="paintCanvas" width="500" height="600" aria-label="A nail you can paint on"></canvas></div>
+      <div class="tools2">
+        <div><p class="tag" style="margin-bottom:12px">Colour</p>
+          <div class="pal" id="pal">
+            <button type="button" data-c="#FF2E7E" aria-label="Hot pink" aria-pressed="true" style="background:#FF2E7E"></button>
+            <button type="button" data-c="#FFE14D" aria-label="Sunshine" aria-pressed="false" style="background:#FFE14D"></button>
+            <button type="button" data-c="#8EF0C8" aria-label="Mint" aria-pressed="false" style="background:#8EF0C8"></button>
+            <button type="button" data-c="#C8B6FF" aria-label="Lilac" aria-pressed="false" style="background:#C8B6FF"></button>
+            <button type="button" data-c="#FF7A3D" aria-label="Orange" aria-pressed="false" style="background:#FF7A3D"></button>
+            <button type="button" data-c="#7A0F22" aria-label="Kumkum red" aria-pressed="false" style="background:#7A0F22"></button>
+            <button type="button" data-c="#16101A" aria-label="Kajal black" aria-pressed="false" style="background:#16101A"></button>
+            <button type="button" data-c="#FFFFFF" aria-label="White" aria-pressed="false" style="background:#FFFFFF"></button>
+          </div></div>
+        <div><p class="tag" style="margin-bottom:12px">Tool</p>
+          <div class="modes" id="modes">
+            <button type="button" data-m="brush" aria-pressed="true">Brush</button>
+            <button type="button" data-m="fill" aria-pressed="false">Fill nail</button>
+            <button type="button" data-m="glitter" aria-pressed="false">Glitter</button>
+            <button type="button" data-m="heart" aria-pressed="false">Heart sticker</button>
+            <button type="button" data-m="star" aria-pressed="false">Star sticker</button>
+          </div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <button class="btn btn-pink" type="button" id="paintSave">Make it for me</button>
+          <button class="btn btn-white" type="button" id="paintRandom">Surprise me</button>
+          <button class="btn btn-white" type="button" id="paintClear">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker sun" aria-hidden="true"><div class="track">
+  <span>perfect fit or free swap</span><span>new drop every friday</span><span>handmade in bangalore</span><span>wear it again</span>
+  <span>perfect fit or free swap</span><span>new drop every friday</span><span>handmade in bangalore</span><span>wear it again</span>
+</div></div>
+
+<section class="band" id="collections" aria-labelledby="col-h" style="background:var(--mint)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Collections</span><h2 id="col-h">Pick your moment.</h2></div><p>Every collection is named after a moment, so you always know what to wear when.</p></div>
+    <div class="tiles">
+      <a class="tile" href="#bridal" style="background:#fff"><span class="badge">weddings</span><figure><img src="images/bride-red-mehendi.webp" alt="A bride in red with mehendi and bangles"></figure><div class="txt"><h3>The Wedding Edit</h3><p>Haldi to reception, a set for every function.</p><div class="row"><span>Temple Gold · First Look</span><span>[₹1,499]+</span></div></div></a>
+      <a class="tile" href="#vibe" style="background:var(--sun)"><span class="badge">festivals</span><figure><img src="images/haldi-flower-bangles.webp" alt="Hands with mehendi and flower bangles"></figure><div class="txt"><h3>Festival Drops</h3><p>Diwali, Ugadi, Onam, Pongal and more.</p><div class="row"><span>Diya Glow · Kasavu</span><span>[₹899]+</span></div></div></a>
+      <a class="tile" href="#swipe" style="background:var(--pink-soft)"><span class="badge">every day</span><figure><img src="images/nude-everyday-nails.webp" alt="Soft nude square nails"></figure><div class="txt"><h3>Everyday</h3><p>Office, college and every chai break.</p><div class="row"><span>Office Monday · Filter Coffee</span><span>[₹599]+</span></div></div></a>
+      <a class="tile" href="#swipe" style="background:var(--lilac)"><span class="badge">nights out</span><figure><img src="images/tortoiseshell-nails.webp" alt="Black and tortoiseshell nails"></figure><div class="txt"><h3>After Dark</h3><p>Parties, dates and concerts.</p><div class="row"><span>Indiranagar Lights · Encore</span><span>[₹899]+</span></div></div></a>
+      <a class="tile" href="#swipe" style="background:#fff"><span class="badge">short &amp; cute</span><figure><img src="images/mini-heart-nails.webp" alt="White nails with tiny pink hearts"></figure><div class="txt"><h3>Mini</h3><p>Super-short lengths and kids' sets.</p><div class="row"><span>Little Star · Recess</span><span>[₹499]+</span></div></div></a>
+      <a class="tile" href="#bridal" style="background:var(--orange)"><span class="badge">made to order</span><figure><img src="images/bride-mehendi-hands.webp" alt="A bride holding up hands with red mehendi"></figure><div class="txt"><h3>Outfit Match</h3><p>Send your outfit photo. We paint a set to match.</p><div class="row"><span>Custom</span><span>[₹2,499]+</span></div></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="quiz" aria-labelledby="quiz-h" style="background:var(--lilac)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Vibe check</span><h2 id="quiz-h">What's your nail personality?</h2></div><p>Three questions, ten seconds. Get your nail personality and the set that matches it.</p></div>
+    <div class="quiz">
+      <div class="q" id="qBox">
+        <div class="qbar" aria-hidden="true"><i id="qBar"></i></div>
+        <span class="step" id="qStep">Question 1 of 3</span>
+        <h3 id="qText">Your ideal Sunday?</h3>
+        <div class="opts" id="qOpts"></div>
+      </div>
+      <div class="resultcard" id="qResult" aria-live="polite">
+        <img id="qImg" alt="Your vibe check result card" hidden>
+        <p class="empty" id="qWait">Your result card shows up here.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px" id="qActions" hidden>
+          <button class="btn btn-pink" type="button" id="qAdd">Add my match to bag</button>
+          <button class="btn btn-white" type="button" id="qCopy">Copy my result</button>
+          <button class="btn btn-white" type="button" id="qAgain">Take it again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="vibe" aria-labelledby="vibe-h" style="background:var(--pink-soft)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Can't decide?</span><h2 id="vibe-h">Spin the vibe.</h2></div><p>Tap spin and let the wheel pick your next set. Spin again as many times as you like.</p></div>
+    <div class="vibe">
+      <div class="wheel-box">
+        <div class="pin" aria-hidden="true"></div>
+        <div class="wheel" id="wheel" aria-hidden="true">
+          <span class="lbl" style="transform:rotate(-60deg)">Haldi</span>
+          <span class="lbl" style="transform:rotate(0deg)">Office</span>
+          <span class="lbl" style="transform:rotate(60deg)">Date night</span>
+          <span class="lbl" style="transform:rotate(120deg)">Sangeet</span>
+          <span class="lbl" style="transform:rotate(180deg)">Onam</span>
+          <span class="lbl" style="transform:rotate(240deg)">Muhurtham</span>
+        </div>
+        <button class="hub" id="spin" type="button">SPIN</button>
+      </div>
+      <div class="result" id="result" aria-live="polite">
+        <img id="resImg" src="images/haldi-flower-bangles.webp" alt="Hands with mehendi and flower bangles">
+        <div class="r"><span class="tag" id="resTag" style="align-self:flex-start">Haldi</span><strong id="resName">Turmeric Morning</strong><p id="resDesc">Sunny yellow ombre on almond tips. Made for the haldi photos.</p><span class="fine" id="resPrice">[₹899]</span><button class="btn btn-pink" id="resAdd" type="button" style="align-self:flex-start">Add to bag</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="how-h" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">How it works</span><h2 id="how-h">Done in 5 minutes.</h2></div></div>
+    <ol class="steps">
+      <li style="background:var(--sun)"><span class="n">1</span><h3>Find your size</h3><p>Use the fit finder once. We save your size, so reorders are one tap.</p></li>
+      <li style="background:var(--mint)"><span class="n">2</span><h3>Press &amp; hold</h3><p>Prep your nails, press each one for 30 seconds, done.</p></li>
+      <li style="background:var(--lilac)"><span class="n">3</span><h3>Wear it again</h3><p>Pop them off gently, store them in the case, bring them back next time.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="fit" aria-labelledby="fit-h" style="background:var(--sun)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Fit</span><h2 id="fit-h">Perfect fit, or a free swap.</h2></div><p>Sized for Indian hands. Measure your thumbnail at its widest point and slide to match.</p></div>
+    <div class="tools">
+      <div class="tool">
+        <h3>Fit finder</h3>
+        <label for="thumb" class="sub" id="thumbLabel">Thumbnail width: 15.5 mm</label>
+        <input type="range" id="thumb" min="12" max="20" step="0.5" value="15.5">
+        <div class="sizeout"><span class="big" id="sizeBig">M</span><div class="hn" id="hn" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <p class="sub" id="sizeNote">Most of your set will be sizes 3 to 7.</p>
+        <p class="fine">A guide only. Final sizing is set after product testing. Unsure? Get the sizing kit for [₹49], taken off your first set.</p>
+      </div>
+      <div class="tool">
+        <h3>Salon vs 5 minutes</h3>
+        <p class="sub">Drag the slider.</p>
+        <div class="compare" id="compare" style="--img-salon:url('images/milky-white-nails.webp');--img-ours:url('images/set-filter-coffee.webp')">
+          <div class="side salon"><div class="lab"><small>Bangalore salon</small><b>₹2,899 · 45 min</b><small>Gel X, one sitting</small></div></div>
+          <div class="side ours"><div class="lab"><small>Project N</small><b>[₹599] · 5 min</b><small>At home, reusable</small></div></div>
+          <div class="handle" aria-hidden="true"><span>⇆</span></div>
+          <input type="range" id="cmp" min="0" max="100" value="50" aria-label="Compare salon and Project N">
+        </div>
+        <p class="fine">Salon price: Gel X at a Bangalore salon on <a href="https://www.fresha.com/lp/fi/bt/nail-salon/in-bangalore" target="_blank" rel="noopener">Fresha</a>. Project N price is an example.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="bridal" aria-labelledby="bridal-h" style="background:#fff">
+  <div class="wrap bridal">
+    <div class="pics">
+      <figure class="p1"><img src="images/bride-mehendi-hands.webp" alt="A bride in red holding up hands with mehendi"></figure>
+      <figure class="p2"><img src="images/mehendi-circle.webp" alt="A circle of hands with mehendi at a celebration"></figure>
+    </div>
+    <div>
+      <span class="tag">Bridal &amp; squad</span>
+      <h2 id="bridal-h">Bride gets the set. The squad gets matching.</h2>
+      <ul>
+        <li>A custom set matched to your outfit</li>
+        <li>One set per function, haldi to reception</li>
+        <li>Squad kits for 6 to 8 bridesmaids</li>
+        <li>Book with us or through your makeup artist</li>
+      </ul>
+      <a class="btn btn-pink" href="#bridal">Book a bridal consult</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="drop" aria-labelledby="drop-h" style="background:var(--lilac)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Friday drop</span><h2 id="drop-h">Fresh sets every Friday.</h2><span class="count" id="countdown">Next drop soon</span></div><p>Small batches, handmade. When they're gone, they're gone.</p></div>
+    <div class="drop">
+      <article class="p"><figure><img src="images/set-filter-coffee.webp" alt="Press-on set in coffee, taupe, white and glitter"><span class="new">new</span></figure><div class="b"><div class="t"><h3>Filter Coffee</h3><span>[₹599]</span></div><p>Everyday · square</p><button type="button" data-add="Filter Coffee">Add to bag</button></div></article>
+      <article class="p"><figure><img src="images/set-indiranagar-lights.webp" alt="Press-on set in navy and black with silver stars"><span class="new">new</span></figure><div class="b"><div class="t"><h3>Indiranagar Lights</h3><span>[₹899]</span></div><p>After Dark · coffin</p><button type="button" data-add="Indiranagar Lights">Add to bag</button></div></article>
+      <article class="p"><figure><img src="images/set-encore.webp" alt="White nails with purple marbled tips"><span class="new">few left</span></figure><div class="b"><div class="t"><h3>Encore</h3><span>[₹899]</span></div><p>After Dark · almond</p><button type="button" data-add="Encore">Add to bag</button></div></article>
+      <article class="p"><figure><img src="images/set-midnight-kolam.webp" alt="Navy, gold and white nails with small motifs"><span class="new">new</span></figure><div class="b"><div class="t"><h3>Midnight Kolam</h3><span>[₹899]</span></div><p>Festival · almond</p><button type="button" data-add="Midnight Kolam">Add to bag</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="club" aria-labelledby="club-h" style="background:var(--orange)">
+  <div class="wrap club">
+    <div><span class="tag">Nail Club</span><h2 id="club-h">New nails in your mailbox, every month.</h2><p style="margin-top:18px;font-size:19px;font-weight:600;max-width:44ch">One new set in your size, plus glue and tabs, at a member price. Skip or cancel any month.</p></div>
+    <div class="card2">
+      <p class="pr">[₹ PRICE]<span style="font-family:var(--body);font-size:17px;font-weight:600">/month</span></p>
+      <ul><li>First pick of every Friday drop</li><li>Your size saved forever</li><li>Glue and tabs included</li></ul>
+      <button class="btn btn-pink" id="joinClub" type="button">Join the club</button>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="say-h" style="background:var(--paper)">
+  <div class="wrap">
+    <span class="tag">#ShowUsYourMoment</span>
+    <h2 class="say" id="say-h" style="margin-top:16px"><span class="w" id="sayWord">Sakkath</span> nails.</h2>
+    <div class="langs" role="group" aria-label="Say it in your language">
+      <button type="button" data-word="Sakkath" aria-pressed="true">Kannada</button>
+      <button type="button" data-word="Keka" aria-pressed="false">Telugu</button>
+      <button type="button" data-word="Semma" aria-pressed="false">Tamil</button>
+      <button type="button" data-word="Adipoli" aria-pressed="false">Malayalam</button>
+      <button type="button" data-word="Ekdum mast" aria-pressed="false">Hindi</button>
+    </div>
+    <div class="wall">
+      <figure class="t"><img src="images/mehendi-lehenga.webp" alt="Hands with mehendi over a green and pink lehenga"><figcaption>sangeet</figcaption></figure>
+      <figure><img src="images/red-letter-nails.webp" alt="Red nails with hand-written letters"><figcaption>date night</figcaption></figure>
+      <figure><img src="images/black-gloss-nails.webp" alt="Black glossy nails with a silver ring"><figcaption>kajal</figcaption></figure>
+      <figure class="t"><img src="images/milky-white-nails.webp" alt="Hands with milky white nails"><figcaption>jasmine</figcaption></figure>
+      <figure><img src="images/pink-almond-nails.webp" alt="Pink almond nails on pink"><figcaption>bubblegum</figcaption></figure>
+      <figure><img src="images/henna-closeup.webp" alt="Hands with intricate henna"><figcaption>bridal</figcaption></figure>
+      <figure><img src="images/tortoiseshell-nails.webp" alt="Tortoiseshell nails"><figcaption>after dark</figcaption></figure>
+      <figure><img src="images/clean-nude-nails.webp" alt="Clean nude nails"><figcaption>office monday</figcaption></figure>
+    </div>
+    <form class="wa" id="waForm" novalidate>
+      <label for="waNum">Get Friday drops on WhatsApp</label>
+      <div class="row"><input id="waNum" type="tel" inputmode="tel" placeholder="10-digit mobile number" autocomplete="tel"><button class="btn btn-pink" type="submit">I'm in</button></div>
+      <p class="msg" id="waMsg" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<section class="band" id="game" aria-labelledby="game-h" style="background:var(--pink)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag" style="background:#fff;color:var(--ink)">Arcade</span><h2 id="game-h" style="color:#fff;-webkit-text-stroke:2px var(--ink);paint-order:stroke fill">Catch the nails.</h2></div><p style="color:#fff">Catch the fresh sets, dodge the chipped ones. 30 seconds, 3 lives. Move with your mouse, finger or arrow keys.</p></div>
+    <div class="game" id="gameBox">
+      <canvas id="gameCanvas" tabindex="0" aria-label="Catch the nails game. Use left and right arrow keys or move the pointer."></canvas>
+      <div class="hud" aria-live="polite"><span id="gScore">Score 0</span><span id="gTime">30s</span><span id="gLives">♥♥♥</span></div>
+      <div class="over" id="gOver"><div><strong id="gTitle">Ready?</strong><p id="gMsg" style="font-weight:600">Best score: <span id="gBest">0</span></p><button class="btn btn-pink" type="button" id="gStart">Start game</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="music" aria-labelledby="music-h" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Nail ASMR</span><h2 id="music-h">Tap the nails.</h2></div><p>Every nail plays a note. Tap a tune, or let it play one for you.</p></div>
+    <div class="keys" id="keys">
+      <button type="button" style="background:var(--pink)" data-f="261.63">Sa</button>
+      <button type="button" style="background:var(--sun)" data-f="293.66">Re</button>
+      <button type="button" style="background:var(--mint)" data-f="329.63">Ga</button>
+      <button type="button" style="background:var(--lilac)" data-f="392.00">Pa</button>
+      <button type="button" style="background:var(--orange)" data-f="440.00">Dha</button>
+      <button type="button" style="background:#fff" data-f="523.25">Sa'</button>
+      <button type="button" style="background:var(--pink)" data-f="587.33">Re'</button>
+      <button type="button" style="background:var(--sun)" data-f="659.25">Ga'</button>
+    </div>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap"><button class="btn btn-sun" type="button" id="autoplay">Play me a tune</button></div>
+  </div>
+</section>
+
+<section class="band" id="jar" aria-labelledby="jar-h" style="background:var(--mint)">
+  <div class="wrap">
+    <div class="head"><div><span class="tag">Just for fun</span><h2 id="jar-h">The nail jar.</h2></div><p>Grab a nail and fling it. Shake the jar. Drop in more. Zero purpose, maximum vibes.</p></div>
+    <div class="jar" id="jarBox"><div class="lid" aria-hidden="true"></div><canvas id="jarCanvas" aria-label="A jar full of colourful press-on nails you can throw around" role="img"></canvas></div>
+    <div class="jar-ctl">
+      <button class="btn btn-pink" type="button" id="shake">Shake it</button>
+      <button class="btn btn-white" type="button" id="drop">Drop 15 more</button>
+      <button class="btn btn-white" type="button" id="empty">Tip it out</button>
+      <span class="n" id="jarCount">0 nails in the jar</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:320px">
+      <a class="logo" href="#top" style="color:var(--paper)"><span aria-hidden="true">N</span>Project N</a>
+      <p style="color:#E9E0EC">Nails for every moment. Handmade in Bangalore.</p>
+      <p class="fine">Photos from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>, free licence, until our own shoots.</p>
+    </div>
+    <div class="cols">
+      <nav aria-label="Shop"><strong>Shop</strong><a href="#swipe">Swipe sets</a><a href="#collections">Collections</a><a href="#drop">Friday drop</a></nav>
+      <nav aria-label="Help"><strong>Help</strong><a href="#fit">Sizing</a><a href="#top">Shipping</a><a href="#top">Contact</a></nav>
+      <nav aria-label="Follow"><strong>Follow</strong><a href="#top">Instagram</a><a href="#top">YouTube</a><a href="#top">WhatsApp</a></nav>
+    </div>
+    <p class="huge dodge" id="huge" aria-hidden="true">every moment</p>
+    <p class="egg">psst: type <b>sakkath</b> anywhere on the page<button type="button" id="discoBtn">or tap for disco</button></p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+
+/* toast + bag */
+let bagN=0, tt;
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2600);}
+function add(name,n){bagN+=(n||1);$('#bagCount').textContent=bagN;const b=$('#bag');b.classList.remove('bump');void b.offsetWidth;b.classList.add('bump');toast(name+' → bag ✓');const r=b.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,70);}
+
+/* confetti (nail-shaped) */
+const PAL=['#FF2E7E','#FFE14D','#8EF0C8','#C8B6FF','#FF7A3D','#FFFFFF'];
+const fx=$('#fx'), fctx=fx.getContext('2d'); let parts=[], fxOn=false;
+function sizeFx(){const d=Math.min(2,window.devicePixelRatio||1);fx.width=innerWidth*d;fx.height=innerHeight*d;fctx.setTransform(d,0,0,d,0,0);} sizeFx(); addEventListener('resize',sizeFx);
+function nailPath(c,w,h){c.beginPath();c.moveTo(-w/2,h/2);c.lineTo(-w/2,-h/6);c.quadraticCurveTo(-w/2,-h/2,0,-h/2);c.quadraticCurveTo(w/2,-h/2,w/2,-h/6);c.lineTo(w/2,h/2);c.quadraticCurveTo(0,h/2-w/3,-w/2,h/2);c.closePath();}
+function burst(x,y,n){if(reduce)return;for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=4+Math.random()*9;parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-6,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:PAL[i%PAL.length],w:8+Math.random()*6,life:1});}if(!fxOn){fxOn=true;requestAnimationFrame(fxLoop);}}
+function fxLoop(){fctx.clearRect(0,0,innerWidth,innerHeight);parts=parts.filter(p=>p.life>0&&p.y<innerHeight+40);
+  parts.forEach(p=>{p.vy+=.35;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.life-=.008;fctx.save();fctx.translate(p.x,p.y);fctx.rotate(p.r);fctx.globalAlpha=Math.max(0,Math.min(1,p.life*2));nailPath(fctx,p.w,p.w*1.5);fctx.fillStyle=p.c;fctx.fill();fctx.lineWidth=2;fctx.strokeStyle='#16101A';fctx.stroke();fctx.restore();});
+  if(parts.length)requestAnimationFrame(fxLoop);else{fxOn=false;fctx.clearRect(0,0,innerWidth,innerHeight);}}
+$$('[data-add]').forEach(b=>b.addEventListener('click',()=>add(b.dataset.add)));
+$('#bag').addEventListener('click',()=>toast(bagN?bagN+(bagN>1?' sets':' set')+' in your bag. Checkout opens at launch':'Your bag is empty'));
+$('#joinClub').addEventListener('click',()=>toast('The club opens at launch. We\'ll ping you'));
+
+/* rotating word */
+const words=['moment','haldi','office monday','date night','sangeet','onam','muhurtham'];
+let wi=0; const rot=$('#rot');
+if(!reduce) setInterval(()=>{wi=(wi+1)%words.length;
+  if(window.gsap){gsap.to(rot,{y:-30,rotate:-6,opacity:0,duration:.22,ease:'power2.in',onComplete:()=>{rot.textContent=words[wi];gsap.fromTo(rot,{y:40,rotate:6,opacity:0},{y:0,rotate:0,opacity:1,duration:.5,ease:'back.out(2.2)'});}});}
+  else rot.textContent=words[wi];},2300);
+
+/* draggable stickers */
+$$('[data-drag]').forEach(el=>{let sx,sy,ox,oy,on=false;
+  el.addEventListener('pointerdown',e=>{on=true;el.setPointerCapture(e.pointerId);sx=e.clientX;sy=e.clientY;ox=el.offsetLeft;oy=el.offsetTop;el.style.right='auto';el.style.bottom='auto';el.style.left=ox+'px';el.style.top=oy+'px';el.style.zIndex=10;});
+  el.addEventListener('pointermove',e=>{if(!on)return;const host=el.offsetParent.getBoundingClientRect();let nx=ox+e.clientX-sx, ny=oy+e.clientY-sy;nx=Math.max(-20,Math.min(host.width-el.offsetWidth+20,nx));ny=Math.max(-10,Math.min(host.height-el.offsetHeight+10,ny));el.style.left=nx+'px';el.style.top=ny+'px';});
+  el.addEventListener('pointerup',()=>{on=false;});});
+
+/* fan parallax */
+const fan=$('#fan'); if(!reduce) $('#hero').addEventListener('pointermove',e=>{const r=fan.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;fan.style.transform='translate('+(x*14)+'px,'+(y*10)+'px)';});
+
+/* swipe deck */
+const SETS=[
+ {name:'Filter Coffee',meta:'Everyday',price:'[₹599]',img:'images/set-filter-coffee.webp'},
+ {name:'Indiranagar Lights',meta:'After Dark',price:'[₹899]',img:'images/set-indiranagar-lights.webp'},
+ {name:'Encore',meta:'After Dark',price:'[₹899]',img:'images/set-encore.webp'},
+ {name:'Midnight Kolam',meta:'Festival',price:'[₹899]',img:'images/set-midnight-kolam.webp'},
+ {name:'Little Hearts',meta:'Mini',price:'[₹499]',img:'images/mini-heart-nails.webp'},
+ {name:'Office Monday',meta:'Everyday',price:'[₹599]',img:'images/nude-everyday-nails.webp'},
+ {name:'Kajal',meta:'After Dark',price:'[₹899]',img:'images/tortoiseshell-nails.webp'}
+];
+const deck=$('#deck'); let liked=[];
+function renderLikes(){const l=$('#likeList');l.innerHTML='';if(!liked.length){const p=document.createElement('p');p.className='empty';p.textContent='Nothing saved yet. Swipe right on one you love.';l.appendChild(p);return;}
+  liked.forEach(s=>{const c=document.createElement('span');c.className='chip';const i=document.createElement('img');i.src=s.img;i.alt='';c.appendChild(i);c.appendChild(document.createTextNode(s.name));l.appendChild(c);});}
+function buildDeck(){deck.innerHTML='';SETS.slice().reverse().forEach((s,ri)=>{const i=SETS.length-1-ri;const c=document.createElement('div');c.className='card';c.dataset.i=i;
+  c.innerHTML='<img alt=""><span class="stamp yes">SAVE</span><span class="stamp no">SKIP</span><div class="cap"><div><strong></strong><div class="fine"></div></div><span></span></div>';
+  c.querySelector('img').src=s.img;c.querySelector('img').alt=s.name+' press-on set';c.querySelector('strong').textContent=s.name;c.querySelector('.fine').textContent=s.meta;c.querySelector('.cap > span').textContent=s.price;
+  const depth=Math.min(i,3);c.style.transform='translateY('+(depth*10)+'px) scale('+(1-depth*0.04)+') rotate('+(i%2?1.5:-1.5)*Math.min(i,1)+'deg)';c.style.zIndex=100-i;
+  deck.appendChild(c);});bindTop();}
+function top(){const cs=$$('#deck .card');return cs[cs.length-1];}
+function restack(){$$('#deck .card').reverse().forEach((c,k)=>{c.style.transition='transform .35s cubic-bezier(.2,.9,.2,1.2)';const d=Math.min(k,3);c.style.transform='translateY('+(d*10)+'px) scale('+(1-d*0.04)+') rotate('+(k?(k%2?1.5:-1.5):0)+'deg)';});}
+function fling(c,dir){const s=SETS[+c.dataset.i];c.style.transition='transform .45s ease-in, opacity .45s';c.style.transform='translate('+(dir*600)+'px,-40px) rotate('+(dir*30)+'deg)';c.style.opacity='0';
+  if(dir>0){liked.push(s);renderLikes();toast('Saved '+s.name+' ♥');}
+  setTimeout(()=>{c.remove();restack();bindTop();if(!top()){const e=document.createElement('p');e.className='empty';e.style.cssText='position:absolute;inset:0;display:grid;place-items:center;text-align:center;border:3px dashed var(--ink);border-radius:28px;padding:20px';e.textContent='That’s the whole drop. Shuffle again or add your saves to the bag.';deck.appendChild(e);}},420);}
+function bindTop(){const c=top();if(!c||c.dataset.bound)return;c.dataset.bound='1';let sx=0,dx=0,on=false;
+  c.addEventListener('pointerdown',e=>{on=true;sx=e.clientX;dx=0;c.setPointerCapture(e.pointerId);c.style.transition='none';});
+  c.addEventListener('pointermove',e=>{if(!on)return;dx=e.clientX-sx;c.style.transform='translateX('+dx+'px) rotate('+(dx*0.06)+'deg)';c.querySelector('.yes').style.opacity=Math.max(0,dx/120);c.querySelector('.no').style.opacity=Math.max(0,-dx/120);});
+  c.addEventListener('pointerup',()=>{if(!on)return;on=false;if(Math.abs(dx)>110)fling(c,dx>0?1:-1);else{c.style.transition='transform .35s cubic-bezier(.2,.9,.2,1.3)';c.style.transform='none';c.querySelector('.yes').style.opacity=0;c.querySelector('.no').style.opacity=0;}});}
+$('#yep').addEventListener('click',()=>{const c=top();if(c)fling(c,1);});
+$('#nope').addEventListener('click',()=>{const c=top();if(c)fling(c,-1);});
+$('#addLikes').addEventListener('click',()=>{if(!liked.length){toast('Swipe right on a set first');return;}add(liked.length+(liked.length>1?' sets':' set'),liked.length);liked=[];renderLikes();});
+$('#resetDeck').addEventListener('click',()=>{buildDeck();toast('Deck shuffled');});
+buildDeck();
+
+/* wheel */
+const SLICES=[
+ {k:'Haldi',name:'Turmeric Morning',desc:'Sunny yellow ombre on almond tips. Made for the haldi photos.',price:'[₹899]',img:'images/haldi-flower-bangles.webp'},
+ {k:'Office',name:'Office Monday',desc:'Soft nude, short square. Looks neat in every meeting.',price:'[₹599]',img:'images/nude-everyday-nails.webp'},
+ {k:'Date night',name:'Indiranagar Lights',desc:'Navy and silver stars on coffin tips. Made for a night out.',price:'[₹899]',img:'images/set-indiranagar-lights.webp'},
+ {k:'Sangeet',name:'Mehendi Night',desc:'Deep green and gold, made to dance in.',price:'[₹899]',img:'images/mehendi-lehenga.webp'},
+ {k:'Onam',name:'Kasavu',desc:'Ivory with a gold border, like your mundu.',price:'[₹899]',img:'images/set-filter-coffee.webp'},
+ {k:'Muhurtham',name:'Temple Gold',desc:'Kumkum red with gold tips for the big moment.',price:'[₹1,499]',img:'images/bride-red-mehendi.webp'}
+];
+let angle=0, spinning=false, current=SLICES[0];
+$('#spin').addEventListener('click',()=>{if(spinning)return;spinning=true;const idx=Math.floor(Math.random()*6);
+  const target=(360-(idx*60+30))%360; const base=angle-(angle%360); angle=base+360*(reduce?1:5)+target; if(angle<=base) angle+=360;
+  $('#wheel').style.transform='rotate('+angle+'deg)';
+  setTimeout(()=>{spinning=false;current=SLICES[idx];$('#resImg').src=current.img;$('#resImg').alt=current.name+' set';$('#resTag').textContent=current.k;$('#resName').textContent=current.name;$('#resDesc').textContent=current.desc;$('#resPrice').textContent=current.price;
+    if(window.gsap&&!reduce)gsap.fromTo('#result',{scale:.92,rotate:-2},{scale:1,rotate:0,duration:.6,ease:'back.out(2.5)'});},reduce?50:3650);});
+$('#resAdd').addEventListener('click',()=>add(current.name));
+
+/* fit finder */
+const thumb=$('#thumb');function size(){const v=parseFloat(thumb.value);$('#thumbLabel').textContent='Thumbnail width: '+v.toFixed(1)+' mm';
+  const s=v<13.5?'XS':v<15?'S':v<16.5?'M':v<18?'L':'XL';$('#sizeBig').textContent=s;const k=v/16,b=[[16,30],[13,27],[14,30],[13,27],[10,21]];
+  $$('#hn i').forEach((n,i)=>{n.style.width=(b[i][0]*k*1.7).toFixed(1)+'px';n.style.height=(b[i][1]*k*1.7).toFixed(1)+'px';});
+  $('#sizeNote').textContent='Most of your set will be sizes '+({XS:'0 to 4',S:'1 to 5',M:'3 to 7',L:'4 to 8',XL:'5 to 9'})[s]+'.';}
+thumb.addEventListener('input',size);size();
+
+/* compare */
+const cmp=$('#cmp');cmp.addEventListener('input',()=>$('#compare').style.setProperty('--pos',cmp.value+'%'));
+
+/* language */
+$$('.langs button').forEach(b=>b.addEventListener('click',()=>{$$('.langs button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');const w=$('#sayWord');w.textContent=b.dataset.word;
+  if(window.gsap&&!reduce)gsap.fromTo(w,{scale:.4,rotate:-10},{scale:1,rotate:0,duration:.6,ease:'elastic.out(1,.5)'});}));
+
+/* whatsapp */
+$('#waForm').addEventListener('submit',e=>{e.preventDefault();const v=$('#waNum').value.replace(/\D/g,''),m=$('#waMsg');
+  if(v.length!==10){m.textContent='Enter a 10-digit mobile number, without +91.';return;}m.textContent='You’re on the list! (Preview only: sign-ups aren’t connected yet.)';$('#waNum').value='';});
+
+/* countdown to Friday 6 pm IST */
+function cd(){const now=new Date();const ist=new Date(now.getTime()+(330+now.getTimezoneOffset())*60000);const t=new Date(ist);t.setHours(18,0,0,0);let a=(5-ist.getDay()+7)%7;if(a===0&&ist>=t)a=7;t.setDate(t.getDate()+a);
+  let s=Math.floor((t-ist)/1000);const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const mm=Math.floor(s/60);
+  $('#countdown').textContent='Next drop in '+d+'d '+String(h).padStart(2,'0')+'h '+String(mm).padStart(2,'0')+'m';}
+cd();setInterval(cd,30000);
+
+/* cursor trail */
+if(!reduce && matchMedia('(pointer:fine)').matches){let last=0;addEventListener('pointermove',e=>{const now=performance.now();if(now-last<45)return;last=now;
+  const d=document.createElement('i');d.className='trail';d.style.left=(e.clientX-6)+'px';d.style.top=(e.clientY-9)+'px';d.style.background=PAL[Math.floor(Math.random()*5)];
+  d.style.setProperty('--dx',((Math.random()-.5)*50)+'px');d.style.setProperty('--r',((Math.random()-.5)*180)+'deg');document.body.appendChild(d);d.addEventListener('animationend',()=>d.remove());});
+  addEventListener('click',e=>{if(e.target.closest('button,a,input,canvas,.card,[data-drag]'))return;burst(e.clientX,e.clientY,18);});}
+
+/* paint a nail */
+(function(){const cv=$('#paintCanvas'),ctx=cv.getContext('2d');const layer=document.createElement('canvas');layer.width=500;layer.height=600;const L=layer.getContext('2d');
+  let color='#FF2E7E',mode='brush',down=false,lx=0,ly=0;
+  function nail(c){c.beginPath();c.moveTo(150,470);c.lineTo(150,250);c.bezierCurveTo(150,140,205,88,250,84);c.bezierCurveTo(295,88,350,140,350,250);c.lineTo(350,470);c.quadraticCurveTo(250,515,150,470);c.closePath();}
+  function heart(c,x,y,s){c.beginPath();c.moveTo(x,y+s*.35);c.bezierCurveTo(x-s*.9,y-s*.2,x-s*.4,y-s*.85,x,y-s*.35);c.bezierCurveTo(x+s*.4,y-s*.85,x+s*.9,y-s*.2,x,y+s*.35);c.closePath();}
+  function star(c,x,y,s){c.beginPath();for(let i=0;i<10;i++){const r=i%2?s*.42:s,a=-Math.PI/2+i*Math.PI/5;c.lineTo(x+Math.cos(a)*r,y+Math.sin(a)*r);}c.closePath();}
+  function render(){ctx.clearRect(0,0,500,600);ctx.fillStyle='#FFF7F2';ctx.fillRect(0,0,500,600);
+    ctx.fillStyle='#C98A68';ctx.strokeStyle='#16101A';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(100,620);ctx.lineTo(100,250);ctx.bezierCurveTo(100,90,170,30,250,30);ctx.bezierCurveTo(330,30,400,90,400,250);ctx.lineTo(400,620);ctx.fill();ctx.stroke();
+    nail(ctx);ctx.fillStyle='#F6D9CC';ctx.fill();ctx.save();nail(ctx);ctx.clip();ctx.drawImage(layer,0,0);
+    ctx.globalAlpha=.35;ctx.fillStyle='#fff';ctx.beginPath();ctx.ellipse(205,230,16,90,-.08,0,Math.PI*2);ctx.fill();ctx.restore();
+    nail(ctx);ctx.lineWidth=5;ctx.strokeStyle='#16101A';ctx.stroke();}
+  function clip(){L.save();nail(L);L.clip();}
+  function pt(e){const r=cv.getBoundingClientRect();return[(e.clientX-r.left)*500/r.width,(e.clientY-r.top)*600/r.height];}
+  function glitter(x,y){clip();for(let i=0;i<40;i++){const a=Math.random()*Math.PI*2,d=Math.random()*34;L.fillStyle=['#FFE14D','#ffffff','#E2B15C',color][i%4];L.beginPath();L.arc(x+Math.cos(a)*d,y+Math.sin(a)*d,1+Math.random()*3,0,Math.PI*2);L.fill();}L.restore();}
+  function stamp(x,y,kind){clip();L.fillStyle=color==='#FFFFFF'?'#FF2E7E':color;L.strokeStyle='#16101A';L.lineWidth=4;(kind==='heart'?heart:star)(L,x,y,34);L.fill();L.stroke();L.restore();}
+  cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);const[x,y]=pt(e);down=true;lx=x;ly=y;
+    if(mode==='fill'){clip();L.fillStyle=color;L.fillRect(0,0,500,600);L.restore();}
+    else if(mode==='glitter')glitter(x,y);else if(mode==='heart'||mode==='star')stamp(x,y,mode);
+    else{clip();L.fillStyle=color;L.beginPath();L.arc(x,y,9,0,Math.PI*2);L.fill();L.restore();}render();});
+  cv.addEventListener('pointermove',e=>{if(!down)return;const[x,y]=pt(e);
+    if(mode==='brush'){clip();L.strokeStyle=color;L.lineWidth=18;L.lineCap='round';L.lineJoin='round';L.beginPath();L.moveTo(lx,ly);L.lineTo(x,y);L.stroke();L.restore();render();}
+    else if(mode==='glitter'){glitter(x,y);render();}lx=x;ly=y;});
+  addEventListener('pointerup',()=>{down=false;});
+  $$('#pal button').forEach(b=>b.addEventListener('click',()=>{$$('#pal button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');color=b.dataset.c;}));
+  $$('#modes button').forEach(b=>b.addEventListener('click',()=>{$$('#modes button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');mode=b.dataset.m;}));
+  $('#paintClear').addEventListener('click',()=>{L.clearRect(0,0,500,600);render();});
+  $('#paintRandom').addEventListener('click',()=>{L.clearRect(0,0,500,600);const pick=()=>PAL[Math.floor(Math.random()*5)];clip();L.fillStyle=pick();L.fillRect(0,0,500,600);
+    const style=Math.floor(Math.random()*3);
+    if(style===0){L.fillStyle=pick();for(let i=0;i<6;i++){L.fillRect(0,110+i*65,500,26);}}
+    if(style===1){L.fillStyle=pick();for(let r=0;r<9;r++)for(let k=0;k<5;k++){L.beginPath();L.arc(160+k*45+(r%2)*22,110+r*45,10,0,Math.PI*2);L.fill();}}
+    if(style===2){L.fillStyle=pick();L.beginPath();L.moveTo(0,0);L.lineTo(500,0);L.lineTo(500,200);L.quadraticCurveTo(250,140,0,200);L.fill();}
+    L.restore();stamp(220+Math.random()*60,300+Math.random()*80,Math.random()<.5?'heart':'star');render();});
+  $('#paintSave').addEventListener('click',()=>{add('Your painted nail');const r=cv.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/3,60);});
+  render();})();
+
+/* nail jar (physics) */
+(function(){if(!window.Matter)return;const M=Matter,box=$('#jarBox'),cv=$('#jarCanvas');const W=box.clientWidth,H=box.clientHeight,dpr=Math.min(2,devicePixelRatio||1);
+  const engine=M.Engine.create();engine.gravity.y=1;
+  const render=M.Render.create({canvas:cv,engine,options:{width:W,height:H,wireframes:false,background:'transparent',pixelRatio:dpr}});
+  const wallOpt={isStatic:true,render:{visible:false}};
+  M.Composite.add(engine.world,[M.Bodies.rectangle(W/2,H+30,W*2,60,wallOpt),M.Bodies.rectangle(-30,H/2,60,H*3,wallOpt),M.Bodies.rectangle(W+30,H/2,60,H*3,wallOpt),M.Bodies.rectangle(W/2,-30,W*2,60,wallOpt)]);
+  let n=0;function drop(k){for(let i=0;i<k;i++){const s=0.8+Math.random()*0.5;const b=M.Bodies.rectangle(40+Math.random()*(W-80),20+Math.random()*40,26*s,40*s,{chamfer:{radius:[13*s,13*s,9*s,9*s]},restitution:.45,friction:.08,angle:Math.random()*6,render:{fillStyle:PAL[Math.floor(Math.random()*6)],strokeStyle:'#16101A',lineWidth:3}});b.isNail=true;M.Composite.add(engine.world,b);n++;}$('#jarCount').textContent=n+' nails in the jar';}
+  if(matchMedia('(pointer:fine)').matches){const mouse=M.Mouse.create(cv);mouse.pixelRatio=dpr;cv.removeEventListener('mousewheel',mouse.mousewheel);cv.removeEventListener('DOMMouseScroll',mouse.mousewheel);cv.removeEventListener('wheel',mouse.mousewheel);
+    M.Composite.add(engine.world,M.MouseConstraint.create(engine,{mouse,constraint:{stiffness:.2,render:{visible:false}}}));render.mouse=mouse;}
+  else cv.addEventListener('click',()=>drop(6));
+  const runner=M.Runner.create();let running=false,seeded=false;
+  new IntersectionObserver(es=>{const v=es[0].isIntersecting;if(v&&!running){M.Render.run(render);M.Runner.run(runner,engine);running=true;if(!seeded){seeded=true;drop(45);}}else if(!v&&running){M.Render.stop(render);M.Runner.stop(runner);running=false;}}).observe(box);
+  $('#shake').addEventListener('click',()=>{M.Composite.allBodies(engine.world).forEach(b=>{if(b.isNail)M.Body.setVelocity(b,{x:(Math.random()-.5)*28,y:-10-Math.random()*18});});box.animate([{transform:'rotate(-3deg)'},{transform:'rotate(3deg)'},{transform:'rotate(-2deg)'},{transform:'none'}],{duration:500});});
+  $('#drop').addEventListener('click',()=>drop(15));
+  $('#empty').addEventListener('click',()=>{M.Composite.allBodies(engine.world).forEach(b=>{if(b.isNail)M.Composite.remove(engine.world,b);});n=0;$('#jarCount').textContent='0 nails in the jar';toast('Jar emptied. Drop some more?');});})();
+
+/* footer letters dodge the cursor */
+(function(){const h=$('#huge');const txt=h.textContent;h.textContent='';const spans=[...txt].map(ch=>{const s=document.createElement('span');s.textContent=ch===' '?' ':ch;h.appendChild(s);return s;});
+  if(reduce)return;const f=$('footer');f.addEventListener('pointermove',e=>{spans.forEach(s=>{const r=s.getBoundingClientRect();const dx=r.left+r.width/2-e.clientX,dy=r.top+r.height/2-e.clientY,d=Math.hypot(dx,dy);
+    if(d<160){const k=(160-d)/160*60;s.style.transform='translate('+(dx/d*k)+'px,'+(dy/d*k)+'px) rotate('+(dx/d*k*.4)+'deg)';}else s.style.transform='';});});
+  f.addEventListener('pointerleave',()=>spans.forEach(s=>s.style.transform=''));})();
+
+/* secret disco mode */
+(function(){let buf='';function disco(){const on=document.body.classList.toggle('disco');toast(on?'Disco mode ON. Type sakkath again to stop':'Disco mode off');if(on)for(let i=0;i<8;i++)setTimeout(()=>burst(Math.random()*innerWidth,-20,30),i*180);}
+  addEventListener('keydown',e=>{if(e.target.closest&&e.target.closest('input,textarea'))return;if(e.key.length!==1)return;buf=(buf+e.key.toLowerCase()).slice(-7);if(buf==='sakkath'){buf='';disco();}});
+  $('#discoBtn').addEventListener('click',disco);})();
+
+/* ---------- sound ---------- */
+let AC=null, soundOn=false;
+function ac(){if(!AC){try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){return null;}}if(AC.state==='suspended')AC.resume();return AC;}
+function tone(f,dur,type,vol){const c=ac();if(!c)return;const o=c.createOscillator(),g=c.createGain();o.type=type||'triangle';o.frequency.value=f;g.gain.setValueAtTime(vol||.25,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+(dur||.3));o.connect(g).connect(c.destination);o.start();o.stop(c.currentTime+(dur||.3)+.02);}
+function blip(f){if(soundOn)tone(f||880,.12,'square',.06);}
+$('#soundBtn').addEventListener('click',e=>{soundOn=!soundOn;e.currentTarget.setAttribute('aria-pressed',String(soundOn));e.currentTarget.textContent=soundOn?'Sound on':'Sound off';if(soundOn){tone(660,.12,'square',.06);setTimeout(()=>tone(990,.15,'square',.06),110);}});
+const _add=add; add=function(name,n){_add(name,n);blip(1046);setTimeout(()=>blip(1318),90);};
+
+/* ---------- scroll progress + spinning badge ---------- */
+(function(){const bar=$('#progress');let lastY=scrollY,vel=0,ang=0;const ring=$('#ringText');
+  addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';},{passive:true});
+  if(reduce)return;(function spin(){vel=vel*.9+(scrollY-lastY)*.1;lastY=scrollY;ang+=.35+Math.abs(vel)*.25;ring.setAttribute('transform','rotate('+(ang%360)+' 75 75)');requestAnimationFrame(spin);})();})();
+
+/* ---------- vibe check quiz ---------- */
+(function(){
+  const QS=[{q:'Your ideal Sunday?',o:[['Brunch with the girls','soft'],['Pooja or a family function','desi'],['Concert, then a night out','main'],['Cafe, a book, no plans','clean']]},
+    {q:'Pick a colour to wear head to toe.',o:[['Baby pink','soft'],['Red and gold','desi'],['Chrome silver','main'],['Beige and white','clean']]},
+    {q:'Your phone wallpaper is…',o:[['Your pet','soft'],['Your family','desi'],['You. Obviously.','main'],['Something minimal','clean']]}];
+  const RES={soft:{t:'Soft Girl Era',set:'Little Hearts',d:'Pastel, cute and a little bit extra.',bg:'#FFD3E5',img:'images/mini-heart-nails.webp'},
+    desi:{t:'Desi Diva',set:'Temple Gold',d:'Red, gold and ready for every function.',bg:'#FFE14D',img:'images/bride-red-mehendi.webp'},
+    main:{t:'Main Character',set:'Indiranagar Lights',d:'Chrome, stars, all eyes on you.',bg:'#C8B6FF',img:'images/set-indiranagar-lights.webp'},
+    clean:{t:'Clean Girl',set:'Office Monday',d:'Neutral, neat and effortlessly put together.',bg:'#8EF0C8',img:'images/nude-everyday-nails.webp'}};
+  let i=0,score={},match=null;
+  function show(){const Q=QS[i];$('#qStep').textContent='Question '+(i+1)+' of 3';$('#qText').textContent=Q.q;$('#qBar').style.width=(i/3*100)+'%';const box=$('#qOpts');box.innerHTML='';
+    Q.o.forEach(([label,k])=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>{score[k]=(score[k]||0)+1;blip(700+i*200);i++;if(i<3)show();else finish();});box.appendChild(b);});
+    if(window.gsap&&!reduce)gsap.from('#qOpts button',{x:-30,opacity:0.3,duration:.4,stagger:.06,ease:'back.out(2)'});}
+  function wrapText(c,text,x,y,max,lh){const w=text.split(' ');let line='';w.forEach((word,k)=>{const t=line+word+' ';if(c.measureText(t).width>max&&k){c.fillText(line.trim(),x,y);line=word+' ';y+=lh;}else line=t;});c.fillText(line.trim(),x,y);}
+  async function finish(){$('#qBar').style.width='100%';const k=Object.keys(score).sort((a,b)=>score[b]-score[a])[0];match=RES[k];
+    try{await document.fonts.ready;}catch(e){}
+    const c=document.createElement('canvas');c.width=800;c.height=1000;const x=c.getContext('2d');
+    x.fillStyle=match.bg;x.fillRect(0,0,800,1000);x.strokeStyle='#16101A';x.lineWidth=14;x.strokeRect(7,7,786,986);
+    const im=new Image();im.src=match.img;await new Promise(r=>{im.onload=r;im.onerror=r;});
+    x.save();x.beginPath();x.roundRect?x.roundRect(60,250,680,500,36):x.rect(60,250,680,500);x.clip();
+    if(im.width){const s=Math.max(680/im.width,500/im.height);x.drawImage(im,60+(680-im.width*s)/2,250+(500-im.height*s)/2,im.width*s,im.height*s);}x.restore();
+    x.lineWidth=8;x.beginPath();x.roundRect?x.roundRect(60,250,680,500,36):x.rect(60,250,680,500);x.stroke();
+    x.fillStyle='#16101A';x.font='700 26px "Space Mono", monospace';x.fillText('MY NAIL PERSONALITY IS',60,100);
+    x.font='96px "Bagel Fat One", sans-serif';x.fillStyle='#FF2E7E';x.lineWidth=6;x.strokeStyle='#16101A';x.strokeText(match.t,60,200);x.fillText(match.t,60,200);
+    x.fillStyle='#16101A';x.font='700 40px Outfit, sans-serif';x.fillText('Matched set: '+match.set,60,820);x.font='500 30px Outfit, sans-serif';wrapText(x,match.d,60,870,680,38);
+    x.font='700 22px "Space Mono", monospace';x.fillText('#ShowUsYourMoment · Project N',60,960);
+    let card='';try{card=c.toDataURL('image/png');}catch(e){card=match.img;}$('#qImg').src=card;$('#qImg').hidden=false;$('#qWait').hidden=true;$('#qActions').hidden=false;
+    $('#qStep').textContent='Done!';$('#qText').textContent='You’re '+match.t+'.';$('#qOpts').innerHTML='';
+    const r=$('#qImg').getBoundingClientRect();burst(r.left+r.width/2,r.top+80,80);
+    if(window.gsap&&!reduce)gsap.from('#qImg',{rotate:-12,scale:.6,duration:.8,ease:'back.out(2)'});}
+  $('#qAdd').addEventListener('click',()=>match&&add(match.set));
+  $('#qCopy').addEventListener('click',()=>{const t='My nail personality is '+match.t+'! Matched set: '+match.set+'. #ShowUsYourMoment';
+    if(navigator.clipboard)navigator.clipboard.writeText(t).then(()=>toast('Copied. Paste it in your story')).catch(()=>toast(t));else toast(t);});
+  $('#qAgain').addEventListener('click',()=>{i=0;score={};$('#qImg').hidden=true;$('#qWait').hidden=false;$('#qActions').hidden=true;show();});
+  show();})();
+
+/* ---------- catch the nails ---------- */
+(function(){const box=$('#gameBox'),cv=$('#gameCanvas'),c=cv.getContext('2d');let W=0,H=0,dpr=1;
+  function fit(){dpr=Math.min(2,devicePixelRatio||1);W=box.clientWidth;H=box.clientHeight;cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);}fit();addEventListener('resize',fit);
+  let best=0;try{best=+localStorage.getItem('pn-best')||0;}catch(e){}$('#gBest').textContent=best;
+  let run=false,px=0,tx=0,items=[],score=0,lives=3,t0=0,lastSpawn=0,keys={},shake=0;
+  cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();tx=e.clientX-r.left;});
+  cv.addEventListener('pointerdown',e=>{const r=cv.getBoundingClientRect();tx=e.clientX-r.left;});
+  addEventListener('keydown',e=>{if(!run)return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){keys[e.key]=true;e.preventDefault();}});
+  addEventListener('keyup',e=>{keys[e.key]=false;});
+  function drawNail(x,y,w,col,bad,rot){c.save();c.translate(x,y);c.rotate(rot);nailPath(c,w,w*1.5);c.fillStyle=col;c.fill();c.lineWidth=3;c.strokeStyle='#16101A';c.stroke();
+    if(bad){c.beginPath();c.moveTo(-w*.2,-w*.6);c.lineTo(w*.1,-w*.1);c.lineTo(-w*.1,w*.2);c.lineTo(w*.2,w*.6);c.stroke();}c.restore();}
+  function frame(now){if(!run)return;const el=(now-t0)/1000,left=Math.max(0,30-el);
+    if(keys.ArrowLeft)tx-=12;if(keys.ArrowRight)tx+=12;tx=Math.max(60,Math.min(W-60,tx));px+=(tx-px)*.25;
+    if(now-lastSpawn>Math.max(260,620-el*12)){lastSpawn=now;const bad=Math.random()<.28;items.push({x:30+Math.random()*(W-60),y:-30,v:2.6+Math.random()*2+el*.09,col:bad?'#A7A2AA':PAL[Math.floor(Math.random()*5)],bad,r:Math.random()*6,vr:(Math.random()-.5)*.1,w:26});}
+    c.clearRect(0,0,W,H);c.save();if(shake>0){c.translate((Math.random()-.5)*shake,(Math.random()-.5)*shake);shake*=.85;}
+    items.forEach(it=>{it.y+=it.v;it.r+=it.vr;drawNail(it.x,it.y,it.w,it.col,it.bad,it.r);});
+    const by=H-40;items=items.filter(it=>{if(it.y>by-20&&it.y<by+16&&Math.abs(it.x-px)<70){
+        if(it.bad){lives--;shake=18;if(soundOn)tone(140,.3,'sawtooth',.1);}else{score++;if(soundOn)tone(600+score*12,.08,'square',.05);}return false;}return it.y<H+40;});
+    c.fillStyle='#FF2E7E';c.strokeStyle='#16101A';c.lineWidth=4;c.beginPath();c.roundRect?c.roundRect(px-64,by,128,28,14):c.rect(px-64,by,128,28);c.fill();c.stroke();
+    c.fillStyle='#fff';c.font='700 14px "Space Mono", monospace';c.textAlign='center';c.fillText('MY BAG',px,by+19);c.restore();
+    $('#gScore').textContent='Score '+score;$('#gTime').textContent=Math.ceil(left)+'s';$('#gLives').textContent='♥'.repeat(Math.max(0,lives))+'♡'.repeat(3-Math.max(0,lives));
+    if(left<=0||lives<=0)end();else requestAnimationFrame(frame);}
+  function end(){run=false;if(score>best){best=score;try{localStorage.setItem('pn-best',best);}catch(e){}}
+    $('#gTitle').textContent=lives<=0?'Chipped out!':'Time’s up!';$('#gMsg').innerHTML='';$('#gMsg').textContent='You caught '+score+' sets. Best: '+best+(score>=25?' · Fast Fingers badge unlocked!':'');
+    $('#gStart').textContent='Play again';$('#gOver').hidden=false;if(score>=25){const r=box.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,100);}}
+  $('#gStart').addEventListener('click',()=>{fit();items=[];score=0;lives=3;px=tx=W/2;t0=performance.now();lastSpawn=0;run=true;$('#gOver').hidden=true;cv.focus({preventScroll:true});requestAnimationFrame(frame);});
+})();
+
+/* ---------- tap the nails ---------- */
+(function(){const ks=$$('#keys button');function play(b){tone(+b.dataset.f,.6,'triangle',.3);tone(+b.dataset.f*2,.25,'sine',.06);b.classList.add('hit');setTimeout(()=>b.classList.remove('hit'),140);}
+  ks.forEach(b=>b.addEventListener('pointerdown',()=>play(b)));ks.forEach(b=>b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();play(b);}}));
+  let playing=false;$('#autoplay').addEventListener('click',()=>{if(playing)return;playing=true;const seq=[];let k=2;for(let n=0;n<20;n++){k=Math.max(0,Math.min(7,k+[-2,-1,1,2,0][Math.floor(Math.random()*5)]));seq.push(k);}
+    seq.forEach((k,n)=>setTimeout(()=>{play(ks[k]);if(n===seq.length-1)playing=false;},n*190));});})();
+
+/* scroll motion */
+if(window.gsap&&!reduce){gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.hero h1',{y:60,rotate:-2,duration:1,ease:'back.out(1.6)'});
+  gsap.from('.fan figure',{y:120,rotate:0,duration:1.1,ease:'back.out(1.4)',stagger:.12});
+  gsap.from('[data-drag]',{scale:0,duration:.7,ease:'back.out(3)',stagger:.12,delay:.5});
+  gsap.utils.toArray('.head h2,.bridal h2,.club h2,.say').forEach(h=>gsap.from(h,{y:60,rotate:-1.5,duration:.9,ease:'back.out(1.5)',scrollTrigger:{trigger:h,start:'top 90%'}}));
+  gsap.utils.toArray('.tile,.p,.steps li,.tool,.wall figure').forEach((el,i)=>gsap.from(el,{y:70,rotate:i%2?3:-3,duration:.8,ease:'back.out(1.4)',scrollTrigger:{trigger:el,start:'top 94%'}}));
+  gsap.from('.bridal .p2',{x:80,rotate:14,duration:1,ease:'back.out(1.6)',scrollTrigger:{trigger:'.bridal',start:'top 75%'}});
+  gsap.to('#huge',{xPercent:-10,ease:'none',scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+  const skewTo=gsap.quickTo('.ticker .track span',"skewX",{duration:.4,ease:'power3'});
+  let skT;ScrollTrigger.create({onUpdate:self=>{skewTo(gsap.utils.clamp(-18,18,self.getVelocity()/-180));clearTimeout(skT);skT=setTimeout(()=>skewTo(0),140);}});
+  gsap.from('.canvas-box',{rotate:-8,y:80,duration:1,ease:'back.out(1.6)',scrollTrigger:{trigger:'#paint',start:'top 75%'}});
+}
+})();
+</script>
+
+</body>
+</html>
